@@ -9,15 +9,15 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 """
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 # My Solution
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         i1 = self.listToNumber(l1)
         i2 = self.listToNumber(l2)
         sum = i1 + i2
@@ -44,8 +44,8 @@ class Solution:
     
 # Leet Code Solution
 
-class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+class Solution2:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         dummyHead = ListNode(0)
         curr = dummyHead
         carry = 0
@@ -60,3 +60,6 @@ class Solution:
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return dummyHead.next
+    
+s = Solution()
+print(s.addTwoNumbers([1, 4, 3], [2, 4, 1]))
